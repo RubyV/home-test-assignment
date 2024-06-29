@@ -1,22 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
-
-    <TextView
-        android:id="@+id/text_home"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        tools:context=".ui.home.HomeFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserAvatar"
+            android:layout_width="@dimen/material_baseline_grid_6x"
+            android:layout_height="@dimen/material_baseline_grid_6x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textAlignment="center"
+            android:text="Alex"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sub_title_font_size"
+            app:layout_constraintStart_toEndOf="@+id/ivUserAvatar"
+            app:layout_constraintTop_toTopOf="@+id/ivUserAvatar"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserAvatar"/>
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textSize="@dimen/title_font_size"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:text="@string/attraction_home_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivUserAvatar"/>
+        <!--    Category -->
+
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textAlignment="center"
+            android:textSize="@dimen/title_font_size"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+        <!--    Category -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/material_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategoryTitle"
+            tools:listitem="@layout/item_category" />
+
+        <TextView
+            android:id="@+id/tvAttractionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textSize="@dimen/title_font_size"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategory"/>
+        <!--    Main attraction -->
+
+        <TextView
+            android:id="@+id/tvAttractionSeeAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:textSize="@dimen/title_font_size"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategory"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAttractions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_white"
+            tools:listitem="@layout/item_attraction"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAttractionTitle"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

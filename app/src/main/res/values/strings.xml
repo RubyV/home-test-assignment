@@ -4,4 +4,10 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_profile">Profile</string>
+    <string name="title_attraction_detail">Attraction Title</string>
+    <string name="title">Test title</string>
+    <string name="attraction_sub_title">Attraction Sub-title</string>
+    <string name="attraction_home_title">Explore awesome places around the world with us</string>
+    <string name="change_lang">Change language</string>
+
 </resources>

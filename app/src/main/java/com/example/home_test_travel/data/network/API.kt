@@ -16,4 +16,12 @@ interface API {
         @Path("lang") lang: String,
         @Query("page") page: Int?,
         ): AttractionsResponse
+
+
+    @GET("{lang}/Miscellaneous/Categories?")
+    @Headers("Accept: application/json")
+    suspend fun getAllCategories(
+        @Path("lang") lang: String,
+        @Query("type") type: String?,
+    ): AttractionsResponse
 }

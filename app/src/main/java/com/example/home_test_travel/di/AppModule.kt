@@ -4,22 +4,21 @@ import android.content.Context
 import com.example.home_test_travel.data.network.API
 import com.example.home_test_travel.data.network.ApiConfig
 import com.example.home_test_travel.data.preferences.AppPreferences
+import com.google.gson.Gson
+import com.hjq.gson.factory.GsonFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import kotlinx.coroutines.Dispatchers
 import okhttp3.OkHttpClient
 import okhttp3.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import timber.log.Timber
 import java.net.UnknownHostException
-import java.time.LocalDateTime
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -31,6 +30,11 @@ class AppModule {
     fun provideAppPreferences(@ApplicationContext context: Context): AppPreferences {
         return AppPreferences(context)
     }
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson =
+        GsonFactory.getSingletonGson()
 
     @Provides
     @Singleton

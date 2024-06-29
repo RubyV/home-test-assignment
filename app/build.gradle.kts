@@ -75,4 +75,14 @@ dependencies {
     // Log
     implementation ("com.jakewharton.timber:timber:5.0.1")
 
+
+    implementation("io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4")
+
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.github.getActivity:GsonFactory:9.6")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.intuit.ssp:ssp-android:1.1.1")
+    implementation("com.intuit.sdp:sdp-android:1.1.1")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.github.delight-im:Android-AdvancedWebView:v3.2.1")
 }

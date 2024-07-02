@@ -68,7 +68,6 @@ class AttractionDetailFragment : Fragment() {
         if((attractionDetail?.images?.size ?: 0) > 0)
         {
             ivAttractionDetail.load(attractionDetail?.images?.get(0)?.src ?: "", requireContext())
-           // ivAttractionDetail.load("https://www.travel.taipei/image/222962" ?: "", requireContext())
         }
         else
         {

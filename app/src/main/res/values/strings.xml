@@ -9,5 +9,8 @@
     <string name="attraction_sub_title">Attraction Sub-title</string>
     <string name="attraction_home_title">Explore awesome places around the world with us</string>
     <string name="change_lang">Change language</string>
+    <string name="user_name_text">Alex</string>
+    <string name="category_title">Category</string>
+    <string name="popular_places_title">Popular places</string>
 
 </resources>

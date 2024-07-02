@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuHost
@@ -139,33 +140,21 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             tvHomeTitle.text = it
         }
-        tvHomeUserName.text = "Alex"
-        tvCategoryTitle.text = "Category"
-        tvAttractionTitle.text = "Popular places"
-        ivAvtar.setImageDrawable(context?.getDrawable(R.drawable.ic_user_avatar))
+        tvHomeUserName.text = requireContext().getText(R.string.user_name_text)
 
-        var itemDecorator =  DividerItemDecoration(
-            context,
-            DividerItemDecoration.HORIZONTAL
-        )
-        ContextCompat.getDrawable(requireContext(), R.drawable.divider)
-            ?.let { itemDecorator.setDrawable(it) };
+        tvCategoryTitle.text = requireContext().getText(R.string.category_title)
+        tvAttractionTitle.text = requireContext().getText(R.string.popular_places_title)
+
+        ivAvtar.setImageDrawable(AppCompatResources.getDrawable(requireContext(), R.drawable.ic_user_avatar))
+
         rvCategory.run {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
             adapter = categoryAdapter
-            itemDecorator = itemDecorator
         }
 
-        var itemDecoratorVertical =  DividerItemDecoration(
-            context,
-            DividerItemDecoration.VERTICAL
-        )
-        ContextCompat.getDrawable(requireContext(), R.drawable.divider)
-            ?.let { itemDecorator.setDrawable(it) };
         rvAttractions.run {
             layoutManager = LinearLayoutManager(context)
             adapter = attractionsAdapter
-            itemDecorator = itemDecoratorVertical
         }
 
     }
@@ -179,7 +168,7 @@ class HomeFragment : Fragment() {
     private fun openDialog() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
         builder
-            .setTitle("Switch language")
+            .setTitle(requireContext().getText(R.string.change_lang))
             .setItems(
                 arrayOf("zh-tw", "zh-cn", "en", "ja", "ko", "es", "id", "th", "vi")
             ) { _, which ->

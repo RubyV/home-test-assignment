@@ -68,7 +68,7 @@ class AppModule {
         val okHttpClient = client
             .build()
         return Retrofit.Builder()
-            .baseUrl("https://www.travel.taipei/open-api/")
+            .baseUrl(ApiConfig.api())
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

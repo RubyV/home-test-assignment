@@ -11,4 +11,8 @@ data class AttractionsData(
     val introduction: String? = "",
     @SerializedName("category")
     val category: List<CategoryData>? = emptyList(),
+    @SerializedName("url")
+    val url: String? = "",
+    @SerializedName("images")
+    var images: List<ImagesData>? = emptyList(),
     )

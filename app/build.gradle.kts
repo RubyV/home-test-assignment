@@ -61,18 +61,27 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Network
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.converterGson)
+
 
     //Reactive programming -RxJava
-    implementation("io.reactivex.rxjava3:rxjava:3.1.8")
+    implementation(libs.rxJava)
 
     // Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation(libs.hiltAndroid)
+    kapt(libs.hiltAndroidCompiler)
 
     // Log
-    implementation ("com.jakewharton.timber:timber:5.0.1")
+    implementation(libs.timber)
 
+    implementation(libs.baseRV)
+
+    implementation(libs.gson)
+    implementation(libs.gsonFactory)
+    implementation(libs.circleImageView)
+    implementation(libs.ssp)
+    implementation(libs.sdp)
+    implementation(libs.glide)
 }
